@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/arcade_carpet_1_512.png" type="Texture" id=2]
+
+[node name="MainRoot" type="Node2D"]
+
+[node name="ArcadeCarpet1512" type="Sprite" parent="."]
+position = Vector2( 510.5, 300 )
+scale = Vector2( 1.99805, 1.16797 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 143, 294 )
