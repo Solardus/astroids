@@ -4,6 +4,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 var Bullet = preload("res://Bullet.tscn")
+var canfire = true
 # var b = "text"
 
 
@@ -15,12 +16,15 @@ func _ready():#start function
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):#update function
 	look_at(get_global_mouse_position())
-	if Input.is_action_pressed("Fire"):
+	if Input.is_action_pressed("Fire") && canfire:
 		var bulletinstance = Bullet.instance()
-		bulletinstance.position = position
+		bulletinstance.position = get_node("FirePoint").global_position
 		bulletinstance.rotation_degrees = rotation_degrees
 		bulletinstance.apply_impulse(Vector2(),Vector2(1000,0).rotated(rotation))
 		get_tree().root.add_child(bulletinstance)
+		canfire = false
+		yield(get_tree().create_timer(0.2),"timeout")
+		canfire = true 
 
 func _physics_process(delta):
 	var direction = Vector2()
