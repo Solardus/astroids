@@ -22,3 +22,7 @@ func _on_BulletRoot_body_entered(body):
 
 func _on_BulletRoot_input_event(viewport, event, shape_idx):
 	queue_free()
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
