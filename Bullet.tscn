@@ -9,6 +9,8 @@ radius = 5.0
 height = 24.0
 
 [node name="BulletRoot" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 3 )
 
 [node name="Bulet3" type="Sprite" parent="."]

@@ -40,4 +40,4 @@ rotation = 1.5708
 shape = SubResource( 4 )
 
 [node name="FirePoint" type="Node2D" parent="."]
-position = Vector2( 45, 0 )
+position = Vector2( 50.01, 0 )
