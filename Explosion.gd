@@ -1,5 +1,5 @@
-extends KinematicBody2D
-var Explosion = preload("res://Explosion.tscn")
+extends Node2D
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -16,9 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_body_entered(body):
-	if "BulletRoot" in body.name:
-		queue_free()
-		var explosion = Explosion.instance()
-		get_tree().get_root().add_child(explosion)
-		explosion.position = get_global_position()
+func _on_AnimatedSprite_animation_finished():
+	queue_free()
