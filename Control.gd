@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -8,22 +8,13 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var playerScore = $playerScore
+	playerScore.text = "Hello Lanyon"
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_BulletRoot_body_entered(bod:
-	$CollisionShape2D.disabled = true
-	queue_free()
-
-
-func _on_BulletRoot_input_event(viewport, event, shape_idx):
-	queue_free()
-
-
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+func addScore():
+	pass
