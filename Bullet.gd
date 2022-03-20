@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_BulletRoot_body_entered(body):
+	$CollisionShape2D.disabled = true
 	queue_free()
 
 

@@ -22,3 +22,8 @@ func _on_Area2D_body_entered(body):
 		var explosion = Explosion.instance()
 		get_tree().get_root().add_child(explosion)
 		explosion.position = get_global_position()
+
+func _physics_process(delta):
+	var player = get_tree().get_nodes_in_group("Player")[0]
+	var direction = (player.position-position).normalized()*50
+	move_and_collide(direction*delta)
