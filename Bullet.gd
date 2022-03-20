@@ -16,8 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_BulletRoot_body_entered(bod:
-	$CollisionShape2D.disabled = true
+func _on_BulletRoot_body_entered(body):
 	queue_free()
 
 
