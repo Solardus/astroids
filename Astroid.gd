@@ -29,4 +29,4 @@ func _on_Area2D_body_entered(body):
 		var Miniastroid = MiniAstroid.instance()
 		get_tree().get_root().add_child(Miniastroid)
 		Miniastroid.position = get_global_position()
-		##Score.addScore()
+		MyVars.addScore()

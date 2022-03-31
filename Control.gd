@@ -9,12 +9,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var playerScore = $playerScore
-	playerScore.text = MyVars.getScore()
+	playerScore.text = str(MyVars.getScore())
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-func addScore():
-	pass
+func _process(delta):
+	$playerScore.text = str(MyVars.getScore())
+
+
