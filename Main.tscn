@@ -39,12 +39,15 @@ __meta__ = {
 }
 
 [node name="ArcadeCarpet1512" type="Sprite" parent="."]
-position = Vector2( 510.5, 300 )
+position = Vector2( 434, 241 )
 scale = Vector2( 20.0366, -9.87032 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, 275 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 461, 281 )
