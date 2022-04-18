@@ -1,5 +1,6 @@
 extends KinematicBody2D
 var Explosion = preload("res://Explosion.tscn")
+var ExplosionSound = preload ("res://Sounds/270311__littlerobotsoundfactory__explosion-03.wav")
 var Score
 
 # Declare member variables here. Examples:
@@ -18,7 +19,14 @@ func _physics_process(delta):
 	var player = get_tree().get_nodes_in_group("Player")[0]
 	var direction = (player.position-position).normalized()*50
 	move_and_collide(direction*delta)
-
+	rotate(0.05)
+	
+#var CorrectSound = preload("res://chimes.wav")
+#
+#func _process(delta: float) -> void:
+#    if !$AudioStreamPlayer2D.is_playing():
+#        $AudioStreamPlayer2D.stream = CorrectSound
+#        $AudioStreamPlayer2D.play()
 
 func _on_Area2D_body_entered(body):
 	if "BulletRoot" in body.name:

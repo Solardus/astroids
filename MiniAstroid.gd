@@ -28,3 +28,4 @@ func _physics_process(delta):
 	var player = get_tree().get_nodes_in_group("Player")[0]
 	var direction = (player.position-position).normalized()*50
 	move_and_collide(direction*delta)
+	rotate(0.05)

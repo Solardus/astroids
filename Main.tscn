@@ -8,6 +8,17 @@
 
 [node name="MainRoot" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 144, 274 )
+motion_mirroring = Vector2( 512, 512 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -37,11 +48,6 @@ text = "Score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ArcadeCarpet1512" type="Sprite" parent="."]
-position = Vector2( 434, 241 )
-scale = Vector2( 20.0366, -9.87032 )
-texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, 275 )
