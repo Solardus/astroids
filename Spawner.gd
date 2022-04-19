@@ -24,8 +24,16 @@ func onTimeout():
 	spawn()
 
 func spawn():
-	var my_random_numberx = rng.randf_range(-200, 1000)
-	var my_random_numbery = rng.randf_range(-200, 1000)
+	var playerPos = get_tree().get_nodes_in_group("Player")[0].get_global_position()
+	var screenSize = get_viewport().get_visible_rect().size
+	var pmx = 1
+	var pmy = 1
+	if rng.randf_range(0, 1)<0.5:
+		pmx = -1
+	if rng.randf_range(0, 1)<0.5:
+		pmy = -1
+	var my_random_numberx = rng.randf_range(200, 300)*pmx
+	var my_random_numbery = rng.randf_range(200, 300)*pmy
 	var astroid = Astroid.instance()
-	astroid.position = Vector2(my_random_numberx,my_random_numbery)
+	astroid.position = (Vector2(playerPos.x+my_random_numberx +  (pmx*screenSize.x/2),playerPos.y+my_random_numbery+ (pmy*screenSize.y/2)));
 	get_tree().root.add_child(astroid)

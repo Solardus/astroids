@@ -39,3 +39,9 @@ func _physics_process(delta):
 	
 	
 	move_and_slide(direction*100)
+
+
+func _on_Area2D_body_entered(body):
+	print(body.get_filename())
+#	get_tree().paused = true
+

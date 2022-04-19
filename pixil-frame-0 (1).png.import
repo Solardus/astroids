@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arcade_carpet_1_512.png-6596f3a66cc46b2b8e0c0cf6cb53c9a5.stex"
+path="res://.import/pixil-frame-0 (1).png-160dd9969d7e45d14d604c370b40e019.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/arcade_carpet_1_512.png"
-dest_files=[ "res://.import/arcade_carpet_1_512.png-6596f3a66cc46b2b8e0c0cf6cb53c9a5.stex" ]
+source_file="res://pixil-frame-0 (1).png"
+dest_files=[ "res://.import/pixil-frame-0 (1).png-160dd9969d7e45d14d604c370b40e019.stex" ]
 
 [params]
 
