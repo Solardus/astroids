@@ -42,6 +42,8 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	print(body.get_filename())
-#	get_tree().paused = true
+	if body.get_filename() == "res://Astroid.tscn":
+		#GlobalControl.gameOver()
+		get_node("/root/MainRoot/CanvasLayer/Control").gameOver()
+		get_tree().paused = true
 

@@ -8,6 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$GameOverLabel.visible = false
 	var playerScore = $playerScore
 	playerScore.text = str(MyVars.getScore())
 	pass # Replace with function body.
@@ -17,4 +18,5 @@ func _ready():
 func _process(delta):
 	$playerScore.text = str(MyVars.getScore())
 
-
+func gameOver():
+	$GameOverLabel.visible = true
