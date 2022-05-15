@@ -3,6 +3,8 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
+var Explosion = preload("res://Explosion.tscn")
+var ExplosionSound = preload ("res://Sounds/270311__littlerobotsoundfactory__explosion-03.wav")
 var rot_speed = 2.5
 var thrust = 500
 var max_vel = 400
@@ -28,9 +30,9 @@ func _ready():#start function
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):#update function
 	
-	if Input.is_action_pressed("Move_Left"):
-		rot += rot_speed * delta
 	if Input.is_action_pressed("Move_Right"):
+		rot += rot_speed * delta
+	if Input.is_action_pressed("Move_Left"):
 		rot -= rot_speed * delta
 	if Input.is_action_pressed("Move_Up"):
 		acc = Vector2(thrust, 0).rotated(rot)
@@ -69,8 +71,12 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	if body.get_filename() == "res://Astroid.tscn":
+	if body.get_filename() == "res://Astroid.tscn" || body.get_filename() == "res://MiniAstroid.tscn":
 		#GlobalControl.gameOver()
 		get_node("/root/MainRoot/CanvasLayer/Control").gameOver()
-		get_tree().paused = true
+		var explosion = Explosion.instance()
+		get_tree().get_root().add_child(explosion)
+		explosion.position = get_global_position()
+		queue_free()
+	
 
