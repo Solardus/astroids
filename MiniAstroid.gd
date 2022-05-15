@@ -1,5 +1,6 @@
 extends KinematicBody2D
 var Explosion = preload("res://Explosion.tscn")
+var minimap_icon = "mob"
 
 # Declare member variables here. Examples:
 # var a = 2

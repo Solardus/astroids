@@ -2,6 +2,7 @@ extends KinematicBody2D
 var Explosion = preload("res://Explosion.tscn")
 var ExplosionSound = preload ("res://Sounds/270311__littlerobotsoundfactory__explosion-03.wav")
 var Score
+var minimap_icon = "mob"
 
 # Declare member variables here. Examples:
 # var a = 2
